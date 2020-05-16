@@ -5,7 +5,7 @@
 
 # Motivation
 
-Unlike the other repo, I just used pure pytorch. Unlike most implementation base on detectron2 or mmdetection, I made the code as simple as possible to understand, rarely trick, as close to the original performance as possible(I hope so).  
+Unlike the other repo, I just used pure pytorch. Unlike most implementation base on detectron2 or mmdetection, I made the code as simple as possible to understand, no trick, as close to the original performance as possible(I hope so).  
 Anyway, if someone looks at the code and sees any bugs, feel free to let me know.  
 
 # Todo
