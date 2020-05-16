@@ -1,6 +1,6 @@
 # simple-centernet-pytorch
->> This is just a simple implementation of "CenterNet:Objects as Points".  
->> office: https://github.com/xingyizhou/CenterNet
+> This is just a simple implementation of "CenterNet:Objects as Points".  
+> office: https://github.com/xingyizhou/CenterNet
 
 
 # Motivation
@@ -38,4 +38,6 @@ Modify this script ```inference.py``` that is easy to understand, then ```python
 
 # Some simple results
 
-
+![e1](https://raw.githubusercontent.com/gakkiri/simple-centernet-pytorch/master/asserts/inf.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDk3ODQ1,size_16,color_FFFFFF,t_70)
+![e2](https://raw.githubusercontent.com/gakkiri/simple-centernet-pytorch/master/asserts/inf2.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDk3ODQ1,size_16,color_FFFFFF,t_70)
+![e3](https://raw.githubusercontent.com/gakkiri/simple-centernet-pytorch/master/asserts/inf3.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNDk3ODQ1,size_16,color_FFFFFF,t_70)
