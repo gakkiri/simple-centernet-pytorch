@@ -13,7 +13,8 @@ Anyway, if someone looks at the code and sees any bugs, feel free to let me know
 - [x] Be able to train smoothly and converge.
 - [x] Inference.
 - [ ] COCO and PASCAL_VOC evaluate.
-- [ ] Improve performance
+- [ ] Improve performance.
+- [ ] More backbone.
 - [ ] So on.
 
 # Requirements
