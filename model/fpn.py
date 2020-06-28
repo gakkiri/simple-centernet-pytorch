@@ -33,7 +33,7 @@ class FPN(nn.Module):
     def __init__(self, inplanes, outplanes=512):
         super(FPN, self).__init__()
 
-        self.laterals = nn.Sequential(*[Conv1x1(inplanes // (2 ** c), outplanes) for c in range(4)])
+        self.laterals = nn.Sequential(*[Conv1x1(inplanes // (2 ** c), outplanes) for c in reversed(range(4))])
         self.smooths = nn.Sequential(*[Conv3x3(outplanes * c, outplanes * c) for c in range(1, 5)])
         self.pooling = nn.MaxPool2d(2)
 
