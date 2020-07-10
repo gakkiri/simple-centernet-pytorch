@@ -37,10 +37,10 @@ class Config(object):
     # dataset
     num_classes = 80
     batch_size = 64  # 128
-    train_imgs_path = '/public/home/jd_ftm/datasets/coco/train2017'
-    train_anno_path = '/public/home/jd_ftm/datasets/coco/annotations/instances_train2017.json'
-    eval_imgs_path = '/public/home/jd_ftm/datasets/coco/val2017'
-    eval_anno_path = '/public/home/jd_ftm/datasets/coco/annotations/instances_val2017.json'
+    train_imgs_path = 'coco/train2017'
+    train_anno_path = 'coco/annotations/instances_train2017.json'
+    eval_imgs_path = 'coco/val2017'
+    eval_anno_path = 'coco/annotations/instances_val2017.json'
     resize_size = [512, 512]
     num_workers = 4
     mean = [0.40789654, 0.44719302, 0.47026115]
