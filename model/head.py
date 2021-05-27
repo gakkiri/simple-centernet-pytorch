@@ -20,10 +20,10 @@ class Head(nn.Module):
         out_conv = nn.Conv2d(in_channel, out_channel, kernel_size=1)
         if bias_fill:
             out_conv.bias.data.fill_(bias_value)
-        return nn.Sequential(*[feat_conv, relu, out_conv])
+        return nn.Sequential(feat_conv, relu, out_conv)
 
     def forward(self, x):
-        hm = self.cls_head(x).sigmoid_()
-        wh = self.wh_head(x)
+        hm = self.cls_head(x).sigmoid()
+        wh = self.wh_head(x).relu()
         offset = self.reg_head(x)
         return hm, wh, offset
