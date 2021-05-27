@@ -1,20 +1,19 @@
 from trainer.trainer import Trainer
 from dataset.voc import VOCDataset
 from model.centernet import CenterNet
-from config.voc_config import Config
+from config.voc import Config
 from loss.loss import Loss
 from torch.utils.data import DataLoader
 
 
 def train(cfg):
     train_ds = VOCDataset(cfg.root, mode=cfg.split, resize_size=cfg.resize_size)
-    train_dl = DataLoader(train_ds, batch_size=cfg.batch_size, shuffle=True,
+    train_dl = DataLoader(train_ds, batch_size=1, shuffle=True,
                           num_workers=cfg.num_workers, collate_fn=train_ds.collate_fn, pin_memory=True)
 
     model = CenterNet(cfg)
     if cfg.gpu:
         model = model.cuda()
-
     loss_func = Loss(cfg)
 
     epoch = 100
@@ -26,5 +25,5 @@ def train(cfg):
 
 
 if __name__ == '__main__':
-    cfg = Config()
+    cfg = Config
     train(cfg)

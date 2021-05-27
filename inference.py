@@ -4,6 +4,7 @@ import torch
 from torchvision import transforms
 from model.centernet import CenterNet
 import matplotlib.pyplot as plt
+from pprint import pprint
 
 
 def preprocess_img(img, input_ksize):
@@ -33,9 +34,7 @@ def show_img(img, boxes, clses, scores):
     boxes = boxes.long()
     draw = ImageDraw.Draw(img)
     for box in boxes:
-        draw.rectangle(xy=box.tolist(), outline='red')
-        draw.rectangle(xy=(box + 1).tolist(), outline='red')
-        draw.rectangle(xy=(box + 2).tolist(), outline='red')
+        draw.rectangle(xy=box.tolist(), outline='red', width=3)
 
     boxes = boxes.tolist()
     scores = scores.tolist()
@@ -49,8 +48,9 @@ def show_img(img, boxes, clses, scores):
 
 ckp = torch.load('./ckp/best_checkpoint.pth')
 cfg = ckp['config']
+pprint(cfg)
 
-img = Image.open('./test/test2.jpg').convert('RGB')
+img = Image.open('./test/test4.jpg').convert('RGB')
 print('preprocessing input...')
 img_paded, info = preprocess_img(img, cfg.resize_size)
 
@@ -67,7 +67,7 @@ model.load_state_dict(ckp['model'])
 model = model.eval()
 print('model done!\ndetecting...')
 
-detects = model.inference(inputs, infos, topK=40, return_hm=False, th=0.1)
+detects = model.inference(inputs, infos, topK=40, return_hm=False, th=0.25)
 
 for img_idx in range(len(detects)):  # 1
     boxes = detects[img_idx][0]
